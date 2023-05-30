@@ -13,9 +13,9 @@ namespace Moppen_API.Controllers
     {
 
         private readonly IJokesDataContext _jokesDataContext;
-        public JokesController()
+        public JokesController(IConfiguration configuration)
         {
-            _jokesDataContext = new JokesDataContext();
+            _jokesDataContext = new JokesDataContext(configuration);
         }
 
         [HttpGet("random")]
@@ -26,15 +26,15 @@ namespace Moppen_API.Controllers
         }
 
 
-        [HttpGet("{author}")]
-        public async Task<IEnumerable<Joke>> getJokesBasedOnAuthor(string author)
+        [HttpGet("author/{author}")]
+        public async Task<IEnumerable<String>> getJokesBasedOnAuthor(string author)
         {
             var result = await _jokesDataContext.SelectJokesBasedOnAuthor(author);
             return result;
         }
 
-        [HttpGet("{subject}")]
-        public async Task<IEnumerable<Joke>> getJokesBasedOnSubject(string subject)
+        [HttpGet("subject/{subject}")]
+        public async Task<IEnumerable<String>> getJokesBasedOnSubject(string subject)
         {
             var result = await _jokesDataContext.SelectJokesBasedOnSubject(subject);
             return result;
