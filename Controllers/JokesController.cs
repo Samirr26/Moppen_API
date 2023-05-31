@@ -39,6 +39,13 @@ namespace Moppen_API.Controllers
             var result = await _jokesDataContext.SelectJokesBasedOnSubject(subject);
             return result;
         }
+
+        [HttpPost("create-new-joke")]
+        public async Task<Joke> createNewJoke([FromBody]Joke Joke)
+        {
+            var result = await _jokesDataContext.InsertJoke(Joke);
+            return result;
+        }
     }
 
 }

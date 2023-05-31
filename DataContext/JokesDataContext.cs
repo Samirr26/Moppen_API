@@ -37,7 +37,24 @@ namespace Moppen_API.DataContext
 
         public async Task<IEnumerable<String>> SelectJokesBasedOnSubject(string subject)
         {
-            return null;
+            try
+            {
+                await using SqlConnection connection = new(_JokesDBConnectionString);
+
+                IEnumerable<String> result = await connection.QueryBuilder($@"
+
+                    SELECT FullJoke As FullJoke
+                    FROM dbo.Jokes
+                    WHERE Subject = {subject}
+
+                    ").QueryAsync<String>();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
         }
 
         public async Task<Joke> SelectRandomJoke()
@@ -54,6 +71,27 @@ namespace Moppen_API.DataContext
                     ").QuerySingleAsync<Joke>();
 
                 return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+        public async Task<Joke> InsertJoke(Joke newJoke)    
+        {
+            try
+            {
+                await using SqlConnection connection = new(_JokesDBConnectionString);
+
+                await connection.QueryBuilder($@"
+
+                    INSERT INTO dbo.Jokes (author, subject, fulljoke)
+                    VALUES ({newJoke.Author}, {newJoke.Subject}, {newJoke.FullJoke});
+
+                    ").ExecuteAsync();
+
+                return newJoke;
             }
             catch (Exception ex)
             {

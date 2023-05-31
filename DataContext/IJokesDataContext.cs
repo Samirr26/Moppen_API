@@ -7,5 +7,6 @@ namespace Moppen_API.DataContext
         public Task<Joke> SelectRandomJoke();
         public Task<IEnumerable<String>> SelectJokesBasedOnAuthor(string author);
         public Task<IEnumerable<String>> SelectJokesBasedOnSubject(string subject);
+        public Task<Joke> InsertJoke(Joke joke);
     }
 }
