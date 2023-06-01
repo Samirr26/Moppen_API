@@ -4,11 +4,11 @@ using Moppen_API.Models;
 
 namespace Moppen_API.DataContext
 {
-    public class JokesDataContext : IJokesDataContext
+    public class JokesDBDataContext : IJokesDBDataContext
     {
         private readonly string _JokesDBConnectionString;
 
-        public JokesDataContext(IConfiguration configuration)
+        public JokesDBDataContext(IConfiguration configuration)
         {
             _JokesDBConnectionString = configuration.GetConnectionString("JokesDB");
         }

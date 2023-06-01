@@ -2,7 +2,7 @@
 
 namespace Moppen_API.DataContext
 {
-    public interface IJokesDataContext
+    public interface IJokesDBDataContext
     {
         public Task<Joke> SelectRandomJoke();
         public Task<IEnumerable<String>> SelectJokesBasedOnAuthor(string author);

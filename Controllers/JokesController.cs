@@ -12,10 +12,10 @@ namespace Moppen_API.Controllers
     public class JokesController : Controller
     {
 
-        private readonly IJokesDataContext _jokesDataContext;
+        private readonly IJokesDBDataContext _jokesDataContext;
         public JokesController(IConfiguration configuration)
         {
-            _jokesDataContext = new JokesDataContext(configuration);
+            _jokesDataContext = new JokesDBDataContext(configuration);
         }
 
         [HttpGet("random")]
