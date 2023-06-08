@@ -65,9 +65,9 @@ namespace Moppen_API.DataContext
 
                 Joke result = await connection.QueryBuilder($@"
 
-                    SELECT RAND() As FullJoke
-                    FROM dbo.Jokes
-
+                    SELECT TOP (1) *
+                    FROM [JokesDB].[dbo].[Jokes]
+                    ORDER BY NEWID()                 
                     ").QuerySingleAsync<Joke>();
 
                 return result;
