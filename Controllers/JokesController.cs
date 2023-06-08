@@ -7,7 +7,6 @@ namespace Moppen_API.Controllers
 {
     [ApiController]
     [Route("jokes")]
-    [Produces("application/json")]
 
     public class JokesController : Controller
     {
@@ -27,14 +26,14 @@ namespace Moppen_API.Controllers
 
 
         [HttpGet("author/{author}")]
-        public async Task<IEnumerable<String>> getJokesBasedOnAuthor(string author)
+        public async Task<IEnumerable<Joke>> getJokesBasedOnAuthor(string author)
         {
             var result = await _jokesDataContext.SelectJokesBasedOnAuthor(author);
             return result;
         }
 
         [HttpGet("subject/{subject}")]
-        public async Task<IEnumerable<String>> getJokesBasedOnSubject(string subject)
+        public async Task<IEnumerable<Joke>> getJokesBasedOnSubject(string subject)
         {
             var result = await _jokesDataContext.SelectJokesBasedOnSubject(subject);
             return result;

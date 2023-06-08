@@ -13,19 +13,19 @@ namespace Moppen_API.DataContext
             _JokesDBConnectionString = configuration.GetConnectionString("JokesDB");
         }
 
-        public async Task<IEnumerable<String>> SelectJokesBasedOnAuthor(string author)
+        public async Task<IEnumerable<Joke>> SelectJokesBasedOnAuthor(string author)
         {
             try
             {
                 await using SqlConnection connection = new(_JokesDBConnectionString);
 
-                IEnumerable<String> result = await connection.QueryBuilder($@"
+                IEnumerable<Joke> result = await connection.QueryBuilder($@"
 
-                    SELECT FullJoke As FullJoke
+                    SELECT *
                     FROM dbo.Jokes
                     WHERE Author = {author}
 
-                    ").QueryAsync<String>();
+                    ").QueryAsync<Joke>();
 
                 return result;
             }
@@ -35,19 +35,19 @@ namespace Moppen_API.DataContext
             }
         }
 
-        public async Task<IEnumerable<String>> SelectJokesBasedOnSubject(string subject)
+        public async Task<IEnumerable<Joke>> SelectJokesBasedOnSubject(string subject)
         {
             try
             {
                 await using SqlConnection connection = new(_JokesDBConnectionString);
 
-                IEnumerable<String> result = await connection.QueryBuilder($@"
+                IEnumerable<Joke> result = await connection.QueryBuilder($@"
 
-                    SELECT FullJoke As FullJoke
+                    SELECT *
                     FROM dbo.Jokes
                     WHERE Subject = {subject}
 
-                    ").QueryAsync<String>();
+                    ").QueryAsync<Joke>();
 
                 return result;
             }
