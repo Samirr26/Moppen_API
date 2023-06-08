@@ -56,7 +56,7 @@ namespace Moppen_API_Tests
         {
 
             var response = _jokesController.getJokesBasedOnAuthor("Samir");
-            response.Should().BeOfType<Task<IEnumerable<String>>>();
+            response.Should().BeOfType<Task<IEnumerable<Joke>>>();
         }
 
         [TestMethod]
@@ -70,7 +70,7 @@ namespace Moppen_API_Tests
         public async Task Get_Joke_Based_Subject_Test_Should_Be_Type_Of_List()
         {
             var response = _jokesController.getJokesBasedOnAuthor("IT");
-            response.Should().BeOfType<Task<IEnumerable<String>>>();
+            response.Should().BeOfType<Task<IEnumerable<Joke>>>();
         }
     }
 }
