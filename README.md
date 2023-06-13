@@ -36,6 +36,17 @@ POST: /jokes/create-new-joke
 ![image](https://github.com/Samirr26/Moppen_API/assets/55532641/05883880-e65e-49d3-ac45-a7c52f7a47b6)
 
 ## Acceptance tests
+From the use cases the following acceptance tests have been set up:
+
+|                                            	| Accepted? 	|
+|--------------------------------------------	|-----------	|
+| User can receive a random joke             	|       Yes 	|
+| User can receive a joke based on an author 	|       Yes 	|
+| User can receive a joke based on a subject 	|       Yes 	|
+| User can add a new joke to the database    	|       Yes 	|
+<br/>
+The acceptance tests were tested with postman:
+
 ![image](https://github.com/Samirr26/Moppen_API/assets/55532641/8248958d-fb57-4413-a066-fc0d6ab7c4a7)
 
 
