@@ -33,7 +33,7 @@ POST: /jokes/create-new-joke
 
 
 ## ERD JokesDB
-![image](https://github.com/Samirr26/Moppen_API/assets/55532641/05883880-e65e-49d3-ac45-a7c52f7a47b6)
+![image](https://github.com/Samirr26/Moppen_API/assets/55532641/741314df-45b3-4100-b10c-27830ea6e26b)
 
 ## Acceptance tests
 From the use cases the following acceptance tests have been set up:
