@@ -10,7 +10,6 @@ namespace Moppen_API.Controllers
 
     public class JokesController : Controller
     {
-
         private readonly IJokesDBDataContext _jokesDataContext;
         public JokesController(IConfiguration configuration)
         {
