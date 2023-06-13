@@ -4,18 +4,38 @@ An API to retrieve Jokes
 ## Use cases
 
 ### Receive random joke
-GET: /random
-
+<pre>
+GET: jokes/random
+</pre>
 ### Receive list of jokes based on subject
-GET: /subject/{subject} <br />
+<pre>
+GET: jokes/subject/{subject} <br />
 e.g. : /subject/sports
+</pre>
 
 ### Receive list of jokes based on author
-GET: /subject/{author} <br />
+<pre>
+GET: jokes/subject/{author} <br />
 e.g. : /subject/samir
+</pre>
+### Add a new joke to the JokesDB
+<pre>
+POST: /jokes/create-new-joke
+</pre>
+#### body example: <br /> 
+<pre>
+{
+  "author": "Samir",
+  "subject": "Animals", 
+  "fullJoke": "What do you call a dog who can manipulate you well? A golden deceiver" 
+}
+</pre>
+
 
 ## ERD JokesDB
 ![image](https://github.com/Samirr26/Moppen_API/assets/55532641/05883880-e65e-49d3-ac45-a7c52f7a47b6)
 
+## Acceptance tests
+![image](https://github.com/Samirr26/Moppen_API/assets/55532641/8248958d-fb57-4413-a066-fc0d6ab7c4a7)
 
 
