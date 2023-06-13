@@ -98,5 +98,47 @@ namespace Moppen_API.DataContext
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        public async Task<IEnumerable<Author>> SelectAllAuthors()
+        {
+            try
+            {
+                await using SqlConnection connection = new(_JokesDBConnectionString);
+
+                IEnumerable<Author> result = await connection.QueryBuilder($@"
+
+                    SELECT *
+                    FROM dbo.Authors
+
+                    ").QueryAsync<Author>();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+        public async Task<Author> InsertAuthor(Author author)
+        {
+            try
+            {
+                await using SqlConnection connection = new(_JokesDBConnectionString);
+
+                await connection.QueryBuilder($@"
+
+                    INSERT INTO dbo.Authors (AuthorName)
+                    VALUES ({author.AuthorName});
+
+                    ").ExecuteAsync();
+
+                return author;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
     }
 }
