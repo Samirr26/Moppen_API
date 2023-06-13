@@ -31,6 +31,23 @@ POST: /jokes/create-new-joke
 }
 </pre>
 
+### Receive list of all authors
+<pre>
+GET: authors/all 
+</pre>
+
+### Add a new author to the JokesDB
+<pre>
+POST: /authors/create-new-author
+</pre>
+#### body example: <br /> 
+<pre>
+{
+  "authorName": "Samir"
+}
+</pre>
+ **_NOTE:_**  Author name has to be unique, you cannot add an author which already exists in JokesDB.
+
 
 ## ERD JokesDB
 ![image](https://github.com/Samirr26/Moppen_API/assets/55532641/741314df-45b3-4100-b10c-27830ea6e26b)
@@ -44,9 +61,11 @@ From the use cases the following acceptance tests have been set up:
 | User can receive a joke based on an author 	|       Yes 	|
 | User can receive a joke based on a subject 	|       Yes 	|
 | User can add a new joke to the database    	|       Yes 	|
+| User can add a new author to the database   |       Yes 	|
+| User can receive a list of all authors    	|       Yes 	|
 <br/>
 The acceptance tests were tested with postman:
 
-![image](https://github.com/Samirr26/Moppen_API/assets/55532641/8248958d-fb57-4413-a066-fc0d6ab7c4a7)
+![image](https://github.com/Samirr26/Moppen_API/assets/55532641/4f4d9270-ee20-4bec-9c7e-862f1c6e463b)
 
 
