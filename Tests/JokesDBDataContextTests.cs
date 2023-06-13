@@ -73,5 +73,12 @@ namespace Moppen_API_Tests
             var response = _jokesDBDataContext.SelectJokesBasedOnSubject("IT");
             response.Should().BeOfType<Task<IEnumerable<Joke>>>();
         }
+
+        [TestMethod]
+        public async Task Select_All_Authors_Should_Be_Type_Of_List()
+        {
+            var response = _jokesDBDataContext.SelectAllAuthors();
+            response.Should().BeOfType<Task<IEnumerable<Author>>>();
+        }
     }
 }
