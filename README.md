@@ -72,4 +72,4 @@ The acceptance tests were tested with postman:
 https://github.com/Drizin/DapperQueryBuilder
 
 ## Class diagram
-![JokesAPIDiagram](https://github.com/Samirr26/Moppen_API/assets/55532641/41392c48-9ce5-40d1-a299-8c82a4e1b070)
+![JokesAPIDiagram](https://github.com/Samirr26/Moppen_API/assets/55532641/c28514bd-15f6-4392-8360-0ae95b7b3a36)
