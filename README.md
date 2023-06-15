@@ -73,5 +73,3 @@ https://github.com/Drizin/DapperQueryBuilder
 
 ## Class diagram
 ![JokesAPIDiagram](https://github.com/Samirr26/Moppen_API/assets/55532641/41392c48-9ce5-40d1-a299-8c82a4e1b070)
-
-
