@@ -68,4 +68,10 @@ The acceptance tests were tested with postman:
 
 ![image](https://github.com/Samirr26/Moppen_API/assets/55532641/4f4d9270-ee20-4bec-9c7e-862f1c6e463b)
 
+## ORM software used:
+https://github.com/Drizin/DapperQueryBuilder
+
+## Class diagram
+![JokesAPIDiagram](https://github.com/Samirr26/Moppen_API/assets/55532641/41392c48-9ce5-40d1-a299-8c82a4e1b070)
+
 
