@@ -15,8 +15,8 @@ e.g. : /subject/sports
 
 ### Receive list of jokes based on author
 <pre>
-GET: jokes/subject/{author} <br />
-e.g. : /subject/samir
+GET: jokes/author/{author} <br />
+e.g. : /author/samir
 </pre>
 ### Add a new joke to the JokesDB
 <pre>
